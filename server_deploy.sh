@@ -1,13 +1,14 @@
 echo "Deploying application ..."
 
-# Enter maintenance mode
-(php artisan down) || true
-
+# Update codebase
+    git reset --hard
     git pull origin main
 
-    php artisan optimize:clear
+# Install dependencies
+composer install --no-interaction --no-dev --prefer-dist
 
-    php artisan route:cache
+# Migrate database
+php artisan migrate --force
 
 # Exit maintenance mode
 php artisan up
