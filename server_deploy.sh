@@ -7,6 +7,12 @@ echo "Deploying application ..."
 # Install dependencies
 composer install --no-interaction --no-dev --prefer-dist
 
+# Clear route cache
+php artisan route:cache
+
+# Clear view cache
+php artisan view:clear
+
 # Migrate database
 php artisan migrate --force
 

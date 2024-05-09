@@ -10,6 +10,6 @@ Route::get('/cicd', function () {
     return "CI/CD Laravel with Github Actions and Bash Script";
 });
 
-Route::get('/cicd2', function () {
-    return "CI/CD Laravel with Github Actions and Bash Script 2";
+Route::get('/pakeko', function () {
+    return "Masuk Pak Eko";
 });
